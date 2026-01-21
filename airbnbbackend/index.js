@@ -32,7 +32,7 @@ app.use(express.json());
 
 // connect mongoose
 
-mongoose.connect(process.env.dbconnect)
+mongoose.connect(process.env.MONGO_URI)
 .then (()=> console.log("done "))
 .catch(() => console.log("error"));
 
