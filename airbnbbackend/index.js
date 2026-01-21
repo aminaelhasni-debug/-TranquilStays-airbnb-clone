@@ -37,13 +37,13 @@ mongoose.connect(process.env.dbconnect)
 .catch(() => console.log("error"));
 
 
-// router
-app.use("/", userController );
-app.use("/", listingController );
-app.use("/", bookingController );
-app.get("/test", (req, res) => {
-    res.send("hello test page ")
-});
+// routers
+app.use("/api", userController);
+app.use("/api", listingController);
+app.use("/api", bookingController);
 
+app.get("/test", (req, res) => {
+  res.send("hello test page");
+});
 
 app.listen(5000, () => { console.log ("server is runing in port 5000")});

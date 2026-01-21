@@ -9,7 +9,7 @@ const Home = () => {
   // Fetch listings
   const fetchListings = async () => {
     try {
-      const res = await axios.get("https://tranquil-stays-airbnb-clone-24gy.vercel.app/listings"); 
+      const res = await axios.get("/api/listings"); 
       setListings(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("Error fetching listings:", err);
