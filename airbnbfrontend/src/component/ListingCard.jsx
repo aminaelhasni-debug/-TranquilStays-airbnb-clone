@@ -24,7 +24,7 @@ const ListingCard = ({ listing }) => {
     }
     try {
       await axios.post(
-        "http://localhost:5000/api/create/booking",
+        "https://tranquil-stays-airbnb-clone.vercel.app/api/create/booking",
         {
           listingId: listing._id,
           startDate,

@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/login", form);
+      const res = await axios.post("https://tranquil-stays-airbnb-clone.vercel.app/api/login", form);
 
       // Save JWT token in localStorage
       localStorage.setItem("token", res.data.token);

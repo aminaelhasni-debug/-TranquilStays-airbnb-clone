@@ -11,7 +11,7 @@ const MyListings = () => {
   // Fetch all user's listings
   const getMyListings = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/my/listings", {
+      const res = await axios.get("https://tranquil-stays-airbnb-clone.vercel.app/api/my/listings", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setListings(res.data);
@@ -25,7 +25,7 @@ const MyListings = () => {
   // Fetch single listing by ID
   const getListingById = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/listing/${id}`);
+      const res = await axios.get(`https://tranquil-stays-airbnb-clone.vercel.app/api/listing/${id}`);
       setSelectedListing(res.data); // store in separate state
     } catch (err) {
       console.error(err);

@@ -10,7 +10,7 @@ const Bookings = () => {
     if (!token) return;
 
     axios
-      .get("http://localhost:5000/api/my/bookings", {
+      .get("https://tranquil-stays-airbnb-clone.vercel.app/api/my/bookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
