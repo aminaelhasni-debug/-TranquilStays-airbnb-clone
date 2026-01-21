@@ -27,19 +27,13 @@ app.get("/headers-test", (req, res) => {
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware
-app.use(cors({
-  origin: [
-    "http://localhost:5173", // local Vite dev server
-    "https://tranquil-stays-airbnb-clone.vercel.app" // your deployed frontend
-  ],
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 // connect mongoose
 
 mongoose.connect(process.env.dbconnect)
-.then (()=> console.log("done"))
+.then (()=> console.log("done "))
 .catch(() => console.log("error"));
 
 

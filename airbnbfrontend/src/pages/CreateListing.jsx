@@ -20,7 +20,7 @@ const CreateListing = () => {
       formData.append("pricePerNight", pricePerNight);
       if (image) formData.append("image", image);
 
-      await axios.post("/api/create/listing", formData, {
+      await axios.post("http://localhost:5000/api/create/listing", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`, // if JWT protected

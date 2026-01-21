@@ -10,7 +10,7 @@ const Bookings = () => {
     if (!token) return;
 
     axios
-      .get("/api/my/bookings", {
+      .get("http://localhost:5000/api/my/bookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
