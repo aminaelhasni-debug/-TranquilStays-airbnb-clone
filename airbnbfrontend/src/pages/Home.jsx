@@ -9,7 +9,7 @@ const Home = () => {
   // Fetch listings
   const fetchListings = async () => {
     try {
-      const res = await axios.get("/listings"); 
+      const res = await axios.get("https://tranquil-stays-airbnb-clone-24gy.vercel.app/listings"); 
       setListings(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("Error fetching listings:", err);
@@ -37,7 +37,7 @@ const Home = () => {
         className="hero bg-danger text-center d-flex flex-column justify-content-center align-items-center"
         style={{ height: "617px" }}
       >
-        <h1 className="fw-bold text-white">Find your perfect stay</h1>
+        <h1 className="fw-bold text-white">Find your perfect stayYYYY</h1>
         <p className="text-light fs-5">Book amazing places easily</p>
       </div>
 

@@ -30,7 +30,7 @@ const Register = ({ onLogin }) => {
     }
 
     try {
-      await axios.post("/register", form);
+      await axios.post("https://tranquil-stays-airbnb-clone-24gy.vercel.app/register", form);
       alert("Registered successfully!");
       navigate("/login"); // redirect to login
     } catch (err) {
