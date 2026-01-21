@@ -24,7 +24,7 @@ router.post("/create/booking", protect, async (req, res) => {
 });
 
 // GET my bookings
-router.get("/my/bookings", protect, async (req, res) => {
+router.get("/my/bookings", async (req, res) => {
   try {
     const bookings = await Booking.find()
       .populate("user", "name email")
