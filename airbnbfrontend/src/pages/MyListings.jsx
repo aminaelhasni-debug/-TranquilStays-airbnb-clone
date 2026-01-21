@@ -11,7 +11,7 @@ const MyListings = () => {
   // Fetch all user's listings
   const getMyListings = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/my/listings", {
+      const res = await axios.get("/my/listings", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setListings(res.data);
@@ -25,7 +25,7 @@ const MyListings = () => {
   // Fetch single listing by ID
   const getListingById = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/listing/${id}`);
+      const res = await axios.get(`/listing/${id}`);
       setSelectedListing(res.data); // store in separate state
     } catch (err) {
       console.error(err);
@@ -47,7 +47,7 @@ const MyListings = () => {
           <div className="col-md-4" key={listing._id}>
             <div className="card h-100 shadow-sm">
               <img
-                src={`http://localhost:5000${listing.image || ""}`}
+                src={`${listing.image || ""}`}
                 className="card-img-top"
                 style={{ height: "200px", objectFit: "cover" }}
                 alt={listing.title}
@@ -75,7 +75,7 @@ const MyListings = () => {
         <div className="mt-5 p-4 border rounded">
           <h4>{selectedListing.title}</h4>
           <img
-            src={`http://localhost:5000${selectedListing.image || ""}`}
+            src={`${selectedListing.image || ""}`}
             className="img-fluid mb-3"
             alt={selectedListing.title}
           />

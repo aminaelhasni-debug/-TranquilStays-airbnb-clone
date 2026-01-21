@@ -30,7 +30,7 @@ const Register = ({ onLogin }) => {
     }
 
     try {
-      await axios.post("http://localhost:5000/register", form);
+      await axios.post("/register", form);
       alert("Registered successfully!");
       navigate("/login"); // redirect to login
     } catch (err) {

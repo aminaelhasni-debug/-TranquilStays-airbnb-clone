@@ -10,7 +10,7 @@ const Bookings = () => {
     if (!token) return;
 
     axios
-      .get("http://localhost:5000/my/bookings", {
+      .get("/my/bookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -24,7 +24,7 @@ const Bookings = () => {
 
     try {
     await axios.delete(
-  `http://localhost:5000/booking/${id}`,
+  `/booking/${id}`,
   {
     headers: { Authorization: `Bearer ${token}` },
   }

@@ -9,7 +9,7 @@ const Home = () => {
   // Fetch listings
   const fetchListings = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/listings"); 
+      const res = await axios.get("/listings"); 
       setListings(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("Error fetching listings:", err);

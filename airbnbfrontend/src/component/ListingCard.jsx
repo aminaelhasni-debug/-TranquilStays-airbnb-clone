@@ -24,7 +24,7 @@ const ListingCard = ({ listing }) => {
     }
     try {
       await axios.post(
-        "http://localhost:5000/create/booking",
+        "/create/booking",
         {
           listingId: listing._id,
           startDate,
@@ -47,7 +47,7 @@ const ListingCard = ({ listing }) => {
   return (
     <div className="card h-100 shadow-sm">
       <img
-        src={listing.image ? `http://localhost:5000${listing.image}` : "https://via.placeholder.com/400x250"}
+        src={listing.image ? `${listing.image}` : "https://via.placeholder.com/400x250"}
         className="card-img-top"
         alt={listing.title || "Listing"}
         style={{ height: "200px", objectFit: "cover" }}
