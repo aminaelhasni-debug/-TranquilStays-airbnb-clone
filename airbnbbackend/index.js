@@ -9,6 +9,8 @@ const bookingController = require("./controllers/bookingController");
 const path = require('path');
 
 
+const PORT = process.env.PORT || 5000;
+
 // Load .env variables
 dotenv.config();
 
