@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://rainbow-sunflower-946226.netlify.app/',
+        target: 'https://tranquil-stays-airbnb-clone.vercel.app/',
         changeOrigin: true,
         secure: false,
       },
