@@ -13,6 +13,7 @@ import Bookings from "./pages/Bookings";
 import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import { getToken, removeToken, isLoggedIn } from "./service/auth"; // keep only one
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 function App() {
@@ -26,36 +27,41 @@ function App() {
   const handleLogin = () => setLoggedIn(true);
 
   return (
-    <BrowserRouter>
-      <Navbar loggedIn={loggedIn} onLogout={handleLogout} />
+    <>
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
 
-      <Routes>
+      <BrowserRouter>
+        <Navbar loggedIn={loggedIn} onLogout={handleLogout} />
+
+        <Routes>
+          {/* Public routes */}
           <Route path="/" element={<Home />} />
           <Route path="/bookings" element={<Bookings />} />
-          <Route path="*" element={<Navigate to="/login" />} />          
-        {/* Public routes */}
-        {!loggedIn && (
-          <>
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route path="/register" element={<Register onLogin={handleLogin} />} />
-            <Route path="/" element={<Home />} />
-          </>
-        )}
 
-        {/* Protected routes */}
-        {loggedIn && (
-          <>
-            <Route path="/create" element={<CreateListing />} />
-            <Route path="/my-listings" element={<MyListings />} />
-          </>
-        )}
-      </Routes>
+          {!loggedIn && (
+            <>
+              <Route path="/login" element={<Login onLogin={handleLogin} />} />
+              <Route path="/register" element={<Register onLogin={handleLogin} />} />
+            </>
+          )}
 
-      
-      <Footer />
-    </BrowserRouter>
+          {/* Protected routes */}
+          {loggedIn && (
+            <>
+              <Route path="/create" element={<CreateListing />} />
+              <Route path="/my-listings" element={<MyListings />} />
+            </>
+          )}
+
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 
 export default App;
-

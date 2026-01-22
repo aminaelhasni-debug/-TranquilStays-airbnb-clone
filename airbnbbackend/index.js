@@ -30,20 +30,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 app.use(express.json());
 
-// // connect mongoose
+// connect mongoose
 
-// mongoose.connect(process.env.MONGO_URI)
-// .then (()=> console.log("done "))
-// .catch(() => console.log("error"));
-
-import mongoose from "mongoose";
-
-export const connectDB = async () => {
-  if (!mongoose.connections[0].readyState) {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("MongoDB connected");
-  }
-};
+mongoose.connect(process.env.MONGO_URI)
+.then (()=> console.log("done "))
+.catch(() => console.log("error"));
 
 
 // routers
