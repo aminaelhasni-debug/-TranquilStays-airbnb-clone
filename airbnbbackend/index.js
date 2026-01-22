@@ -35,6 +35,7 @@ app.use(express.json());
 // mongoose.connect(process.env.MONGO_URI)
 // .then (()=> console.log("done "))
 // .catch(() => console.log("error"));
+
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
@@ -54,6 +55,6 @@ app.get("/test", (req, res) => {
   res.send("hello test page");
 });
 
-// app.listen(5000, () => { console.log ("server is runing in port 5000")});
+app.listen(5000, () => { console.log ("server is runing in port 5000")});
 
 // module.exports = app;
