@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 require('dotenv').config(); 
 const dotenv = require('dotenv');
 const cors = require('cors');
+const { injectSpeedInsights } = require("@vercel/speed-insights/node");
 const userController = require("./controllers/userController");
 const listingController = require("./controllers/listingContorller");
 const bookingController = require("./controllers/bookingController");
 const path = require('path');
+
+// Initialize Vercel Speed Insights for performance monitoring
+injectSpeedInsights();
 
 
 const PORT = process.env.PORT || 5000;
